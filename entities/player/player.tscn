@@ -1,3 +1,23 @@
 [gd_scene format=3 uid="uid://cxqcqb6a8f0fh"]
 
+[ext_resource type="Script" uid="uid://b8yui1x003t8o" path="res://entities/player/player.gd" id="1_symyc"]
+[ext_resource type="Script" uid="uid://dpvvxwm2ifsds" path="res://components/health_component.gd" id="2_abrql"]
+[ext_resource type="Texture2D" uid="uid://b46yvdob28ut3" path="res://icon.svg" id="2_sglur"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sglur"]
+size = Vector2(113, 116)
+
 [node name="Player" type="CharacterBody2D" unique_id=1645679701]
+script = ExtResource("1_symyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=257232179]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_sglur")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=876909127]
+texture = ExtResource("2_sglur")
+
+[node name="HealthComponent" type="Node" parent="." unique_id=801762596]
+unique_name_in_owner = true
+script = ExtResource("2_abrql")
+metadata/_custom_type_script = "uid://dpvvxwm2ifsds"

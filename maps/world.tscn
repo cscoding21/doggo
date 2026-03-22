@@ -2,6 +2,20 @@
 
 [ext_resource type="PackedScene" uid="uid://cxqcqb6a8f0fh" path="res://entities/player/player.tscn" id="1_dyenr"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dyenr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e0ubd"]
+size = Vector2(1120, 20)
+
 [node name="World" type="Node2D" unique_id=1737412973]
 
 [node name="Player" parent="." unique_id=1645679701 instance=ExtResource("1_dyenr")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2060609291]
+modulate = Color(0.30149034, 5.2895695e-05, 0.29526365, 1)
+position = Vector2(-136, 463)
+physics_material_override = SubResource("PhysicsMaterial_dyenr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1792646938]
+position = Vector2(550, 0)
+shape = SubResource("RectangleShape2D_e0ubd")
